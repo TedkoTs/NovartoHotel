@@ -13,3 +13,4 @@ export class AccomodationsComponent implements OnInit {
   }
 
 }
+
