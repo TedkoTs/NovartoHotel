@@ -1,12 +1,14 @@
 <mat-toolbar color="primary">
-  <div>
-    <button mat-icon-mat-button (click)="onOpenSideNav()">
-      <mat-icon>menu</mat-icon>
+  <div class="left-button-toolbar">
+    <button mat-button (click)="onOpenSideNav()">
+      <mat-icon>list</mat-icon>
     </button>
-  </div>
-  <div>
-    <p>
-      Logo
-    </p>
+    <button
+      mat-button
+      [routerLink]="['']"
+      [routerLinkActive]="'nav-link-active'"
+    >
+      <mat-icon>home</mat-icon>
+    </button>
   </div>
 </mat-toolbar>

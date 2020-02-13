@@ -6,8 +6,8 @@ import { AccomodationsComponent } from './accomodations/accomodations.component'
 
 
 const routes: Routes = [
-  { path: 'accomodation', component: AccomodationsComponent },
   { path: '', component: HomeComponent },
+  { path: 'accomodation', component: AccomodationsComponent },
   { path: 'pricing', component: PricingComponent }
 ];
 

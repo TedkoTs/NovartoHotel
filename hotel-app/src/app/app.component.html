@@ -1,10 +1,11 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-    <app-sidenav></app-sidenav>
+    <app-sidenav (closeSideNav)="sidenav.close()"></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-header (SideNavOpen)="sidenav.toggle()"></app-header>
-    <app-tabs></app-tabs>
   </mat-sidenav-content>
-  <router-outlet></router-outlet>
 </mat-sidenav-container>
+
+<router-outlet></router-outlet>
+

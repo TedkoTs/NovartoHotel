@@ -11,7 +11,6 @@ import { RoomsComponent } from './accomodations/rooms/rooms.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
-import { TabsComponent } from './navigation/tabs/tabs.component';
 import { PricingComponent } from './pricing/pricing.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { PricingComponent } from './pricing/pricing.component';
     HomeComponent,
     HeaderComponent,
     SidenavComponent,
-    TabsComponent,
     PricingComponent
   ],
   imports: [
