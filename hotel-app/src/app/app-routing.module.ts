@@ -1,3 +1,4 @@
+import { CalculatorComponent } from './calculator/calculator.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,8 @@ import { AccomodationsComponent } from './accomodations/accomodations.component'
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'accomodation', component: AccomodationsComponent },
-  { path: 'pricing', component: PricingComponent }
+  { path: 'pricing', component: PricingComponent },
+  {path: 'calculator', component: CalculatorComponent}
 ];
 
 @NgModule({

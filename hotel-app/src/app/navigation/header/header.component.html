@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   <div class="left-button-toolbar">
-    <button mat-button (click)="onOpenSideNav()">
+    <!-- <button mat-button (click)="onOpenSideNav()">
       <mat-icon>list</mat-icon>
-    </button>
+    </button> -->
     <button
       mat-button
       [routerLink]="['']"
@@ -10,5 +10,19 @@
     >
       <mat-icon>home</mat-icon>
     </button>
+    <button
+    mat-button
+    [routerLink]="['/accomodation']"
+    [routerLinkActive]="'nav-link-active'"
+  >
+    <mat-icon>room</mat-icon>
+  </button>
+    <button
+    mat-button
+    [routerLink]="['/calculator']"
+    [routerLinkActive]="'nav-link-active'"
+  >
+    <mat-icon>euro_symbol</mat-icon>
+  </button>
   </div>
 </mat-toolbar>

@@ -10,8 +10,7 @@ import { AccomodationsComponent } from './accomodations/accomodations.component'
 import { RoomsComponent } from './accomodations/rooms/rooms.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
-import { SidenavComponent } from './navigation/sidenav/sidenav.component';
-import { PricingComponent } from './pricing/pricing.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { PricingComponent } from './pricing/pricing.component';
     RoomsComponent,
     HomeComponent,
     HeaderComponent,
-    SidenavComponent,
-    PricingComponent
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
