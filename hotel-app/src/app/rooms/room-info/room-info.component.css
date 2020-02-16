@@ -1,0 +1,16 @@
+.room-info-container {
+  width: 100%;
+  display: flex;
+}
+
+.room-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.room-card .room-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
