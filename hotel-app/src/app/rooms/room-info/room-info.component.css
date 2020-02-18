@@ -14,3 +14,14 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.breakfast-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.breakfast-label {
+  margin: 0 5px;
+  font-size: 13px;
+}

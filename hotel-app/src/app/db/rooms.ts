@@ -1,113 +1,112 @@
 import { RoomDTO } from './room.dto';
-import { RoomType } from './room-type.enum';
 
 export const rooms: RoomDTO[] = [
   {
     id: 1,
-    type: RoomType.Single,
+    type: 'Single Room',
     isBooked: false,
     price: 50,
     bnB: false,
-    daysBooked: 0,
-    startDate: ''
+    startDate: '',
+    endDate: ''
   },
   {
     id: 2,
-    type: RoomType.Single,
+    type: 'Single Room',
     isBooked: false,
     price: 50,
-    bnB: true,
-    daysBooked: 0,
-    startDate: ''
+    bnB: false,
+    startDate: '',
+    endDate: ''
   },
   {
     id: 3,
-    type: RoomType.Single,
-    isBooked: true,
+    type: 'Single Room',
+    isBooked: false,
     price: 50,
     bnB: false,
-    daysBooked: 3,
-    startDate: '2020-04-01'
+    startDate: '',
+    endDate: ''
   },
   {
     id: 4,
-    type: RoomType.Single,
-    isBooked: true,
+    type: 'Single Room',
+    isBooked: false,
     price: 50,
-    bnB: true,
-    daysBooked: 5,
-    startDate: '2020-04-10'
+    bnB: false,
+    startDate: '',
+    endDate: ''
   },
   {
     id: 5,
-    type: RoomType.Double,
-    isBooked: true,
+    type: 'Double Room',
+    isBooked: false,
     price: 100,
-    bnB: true,
-    daysBooked: 2,
-    startDate: '2020-04-03'
+    bnB: false,
+    startDate: '',
+    endDate: ''
   },
   {
     id: 6,
-    type: RoomType.Double,
-    isBooked: true,
+    type: 'Double Room',
+    isBooked: false,
     price: 100,
     bnB: false,
-    daysBooked: 3,
-    startDate: '2020-04-02'
+    startDate: '',
+    endDate: ''
   },
   {
     id: 7,
-    type: RoomType.Double,
+    type: 'Double Room',
     isBooked: false,
     price: 100,
-    bnB: true,
-    daysBooked: 0,
-    startDate: ''
+    bnB: false,
+    startDate: '',
+    endDate: ''
   },
   {
     id: 8,
-    type: RoomType.Double,
+    type: 'Double Room',
     isBooked: false,
     price: 100,
     bnB: false,
-    daysBooked: 0,
-    startDate: ''
+    startDate: '',
+    endDate: ''
   },
   {
     id: 9,
-    type: RoomType.Studio,
-    isBooked: true,
+    type: 'Studio',
+    isBooked: false,
     price: 150,
-    bnB: true,
-    daysBooked: 7,
-    startDate: '2020-05-07'
+    bnB: false,
+    startDate: '',
+    endDate: ''
   },
   {
     id: 10,
-    type: RoomType.Studio,
-    isBooked: true,
+    type: 'Studio',
+    isBooked: false,
     price: 150,
     bnB: false,
-    daysBooked: 10,
-    startDate: '2020-04-21'
+    startDate: '',
+    endDate: ''
   },
   {
     id: 11,
-    type: RoomType.Studio,
-    isBooked: false,
-    price: 150,
-    bnB: true,
-    daysBooked: 0,
-    startDate: ''
-  },
-  {
-    id: 12,
-    type: RoomType.Studio,
+    type: 'Studio',
     isBooked: false,
     price: 150,
     bnB: false,
-    daysBooked: 0,
-    startDate: ''
+    startDate: '',
+    endDate: ''
+  },
+  {
+    id: 12,
+    type: 'Studio',
+    isBooked: false,
+    price: 150,
+    bnB: false,
+    startDate: '',
+    endDate: ''
   }
 ];

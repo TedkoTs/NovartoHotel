@@ -1,10 +1,10 @@
-import { RoomType } from './room-type.enum';
+
 export class RoomDTO {
   id: number;
-  type: RoomType;
+  type: string;
   isBooked: boolean;
   price: number;
   bnB: boolean;
-  daysBooked: number;
   startDate: string;
+  endDate: string;
 }

@@ -1,12 +1,29 @@
 <div *ngIf="this.roomToShow" class="room-info-container">
   <mat-card class="room-card">
     <mat-card-header>
-      <mat-card-title>{{ this.roomToShow.type}} Room</mat-card-title>
+      <mat-card-title>{{ this.roomToShow.type }}</mat-card-title>
       <mat-card-subtitle>Status: Available</mat-card-subtitle>
-      <mat-card-subtitle>Price: {{ this.roomToShow.price }} &euro;</mat-card-subtitle>
+      <mat-card-subtitle
+        >Price: {{ this.roomToShow.price }} &euro;</mat-card-subtitle
+      >
     </mat-card-header>
-    <mat-card-actions>
-      <button mat-button (click)="this.onBookButtonClick()">Book</button>
+    <mat-card-actions fxFlexAlign="end" align="end">
+      <section class="breakfast-section">
+        <label class="breakfast-label">Add breakfast</label>
+        <mat-checkbox
+          [checked]="this.roomToShow.bnB"
+          color="warn"
+          class="room-item"
+          (change)="this.onBreakfastClick()"
+        ></mat-checkbox>
+      </section>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="this.onBookButtonClick()"
+      >
+        Book
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
