@@ -1,8 +1,8 @@
+<div class="filter-btn">
+  <button mat-raised-button color="primary" [routerLink]="['/filter']">Filter</button>
+</div>
+
 <div class="rooms-list">
-  <div class="filter-btn">
-    <button mat-raised-button color="primary" [routerLink]="['/filter']">Filter</button>
-  </div>
-  <br />
   <div class="rooms-list">
     <app-room-info
       *ngFor="let room of this.rooms"

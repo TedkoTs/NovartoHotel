@@ -12,13 +12,11 @@
     >
       <mat-card-content>
         <mat-form-field>
-          <input
-            matInput
-            type="text"
-            placeholder="Room type"
-            formControlName="type"
-            id="type"
-          />
+          <mat-select placeholder="Room type" formControlName="type" id="type">
+            <mat-option *ngFor="let type of this.roomTypes" [value]="type">{{
+              type
+            }}</mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field>
           <input

@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RoomFilterComponent implements OnInit {
 
   public filterForm: FormGroup;
-  public roomTypes = ['Single', 'Double', 'Studio'];
+  public roomTypes: string[] = ['Single', 'Double', 'Studio'];
 
 
   constructor(private readonly formBuilder: FormBuilder) { }
