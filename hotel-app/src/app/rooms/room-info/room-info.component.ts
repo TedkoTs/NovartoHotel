@@ -14,8 +14,15 @@ export class RoomInfoComponent {
     const formattedStartDate = moment(value.startDate, ['YYYY-MM-DD']).format(
       'MMMM Do YYYY'
     );
+    const formattedEndDate = moment(value.endDate, ['YYYY-MM-DD']).format(
+      'MMMM Do YYYY'
+    );
 
-    this.roomToShow = { ...value, startDate: formattedStartDate };
+    this.roomToShow = {
+      ...value,
+      startDate: formattedStartDate,
+      endDate: formattedEndDate
+    };
   }
 
   @Output() public bookRoom: EventEmitter<RoomDTO> = new EventEmitter();

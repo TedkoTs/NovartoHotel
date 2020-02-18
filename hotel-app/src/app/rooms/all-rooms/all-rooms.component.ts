@@ -13,7 +13,9 @@ export class AllRoomsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(this.rooms);
+  }
 
   public bookRoom(room: RoomDTO): void {
     const index: number = this.rooms.findIndex(x => x.id === room.id);

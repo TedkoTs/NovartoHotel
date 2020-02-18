@@ -1,6 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RoomFilterDTO } from '../../db/filter-room.dto';
+import * as moment from 'moment';
 
 
 @Component({
@@ -12,6 +14,7 @@ export class RoomFilterComponent implements OnInit {
 
   public filterForm: FormGroup;
   public roomTypes: string[] = ['Single', 'Double', 'Studio'];
+  public filter: RoomFilterDTO;
 
 
   constructor(private readonly formBuilder: FormBuilder) { }
@@ -24,9 +27,19 @@ export class RoomFilterComponent implements OnInit {
     });
   }
 
-  public logFilter(data) {
-    console.log(data);
+  public logFilter(data: RoomFilterDTO) {
+    const formattedStartDate = moment(data.startDate, ['YYYY-MM-DD']).format(
+      'MMMM D YYYY');
+    const formattedEndDate = moment(data.endDate, ['YYYY-MM-DD']).format(
+      'MMMM D YYYY'
+    );
 
+    this.filter = {
+      ...data,
+      startDate: formattedStartDate,
+      endDate: formattedEndDate
+    };
+    console.log(this.filter);
   }
 
 
