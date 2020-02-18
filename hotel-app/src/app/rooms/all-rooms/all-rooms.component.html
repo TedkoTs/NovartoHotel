@@ -1,0 +1,14 @@
+<div class="rooms-list">
+  <div class="filter-btn">
+    <button mat-raised-button color="primary" [routerLink]="['/filter']">Filter</button>
+  </div>
+  <br />
+  <div class="rooms-list">
+    <app-room-info
+      *ngFor="let room of this.rooms"
+      [room]="room"
+      class="room-info"
+      (bookRoom)="this.bookRoom($event)"
+    ></app-room-info>
+  </div>
+</div>

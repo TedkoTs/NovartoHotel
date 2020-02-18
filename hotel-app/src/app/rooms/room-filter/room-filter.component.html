@@ -1,0 +1,75 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title>Select room specifications</mat-card-title>
+    <form
+      [formGroup]="this.filterForm"
+      autocomplete="off"
+      novalidate
+      (ngSubmit)="logFilter(filterForm.value)"
+      fxLayout="column wrap"
+      fxLayoutAlign="center center"
+      fxLayoutGap="10px"
+    >
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Room type"
+            formControlName="type"
+            id="type"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            placeholder="Choose check-in"
+            formControlName="startDate"
+            id="startDate"
+            readonly
+            (click)="picker.open()"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="picker2"
+            placeholder="Choose check-out"
+            formControlName="endDate"
+            id="endDate"
+            readonly
+            (click)="picker2.open()"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker2"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="center">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!filterForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          mat-raised-button
+          color="warn"
+          [routerLink]="['/rooms']"
+        >
+          Cancel
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RoomDTO } from '../../../db/room.dto';
-import { rooms } from '../../../db/rooms';
+import { RoomDTO } from '../../db/room.dto';
+import { rooms } from '../../db/rooms';
 
 @Component({
   selector: 'app-all-rooms',
@@ -8,6 +8,7 @@ import { rooms } from '../../../db/rooms';
   styleUrls: ['./all-rooms.component.css']
 })
 export class AllRoomsComponent implements OnInit {
+
   public rooms: RoomDTO[] = rooms.slice().filter(room => room.isBooked === false);
 
   constructor() { }
