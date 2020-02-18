@@ -17,6 +17,8 @@
           (change)="this.onBreakfastClick()"
         ></mat-checkbox>
       </section>
+      <section class="price-section">
+      <label class="price-label">Total price: {{calculatePrice()}}&euro;</label>
       <button
         mat-raised-button
         color="primary"
@@ -24,6 +26,7 @@
       >
         Book
       </button>
+    </section>
     </mat-card-actions>
   </mat-card>
 </div>

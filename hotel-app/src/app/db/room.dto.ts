@@ -5,6 +5,7 @@ export class RoomDTO {
   isBooked: boolean;
   price: number;
   bnB: boolean;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
+  nights: number;
 }

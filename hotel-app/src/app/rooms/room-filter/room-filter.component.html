@@ -1,4 +1,4 @@
-<section fxLayout="row wrap" fxLayoutAlign="center center">
+<section fxLayout="row wrap" fxLayoutAlign="left left">
   <mat-card fxFlex="500px" fxFlex.xs="100%">
     <mat-card-title>Select room specifications</mat-card-title>
     <form
@@ -56,17 +56,16 @@
           mat-raised-button
           color="primary"
           [disabled]="!filterForm.valid"
-          [routerLink]="['/rooms']"
         >
-          Create
+          Filter
         </button>
         <button
           type="button"
           mat-raised-button
           color="warn"
-          [routerLink]="['/rooms']"
+          (click) = "filterReset()"
         >
-          Cancel
+          Reset
         </button>
       </mat-card-actions>
     </form>

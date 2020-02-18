@@ -1,5 +1,4 @@
-
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoomFilterDTO } from '../../db/filter-room.dto';
 import * as moment from 'moment';
@@ -12,8 +11,11 @@ import * as moment from 'moment';
 })
 export class RoomFilterComponent implements OnInit {
 
+  @Output() applyFilter: EventEmitter<RoomFilterDTO> = new EventEmitter();
+  @Output() resetList: EventEmitter<any> = new EventEmitter();
+
   public filterForm: FormGroup;
-  public roomTypes: string[] = ['Single', 'Double', 'Studio'];
+  public roomTypes: string[] = ['Single Room', 'Double Room', 'Studio'];
   public filter: RoomFilterDTO;
 
 
@@ -22,25 +24,27 @@ export class RoomFilterComponent implements OnInit {
   ngOnInit(): void {
     this.filterForm = this.formBuilder.group({
       type: ['', [Validators.required]],
-      startDate: [new Date()],
-      endDate: [new Date()]
+      startDate: [new Date(), [Validators.required]],
+      endDate: [new Date(), [Validators.required]]
     });
   }
 
   public logFilter(data: RoomFilterDTO) {
-    const formattedStartDate = moment(data.startDate, ['YYYY-MM-DD']).format(
-      'MMMM D YYYY');
-    const formattedEndDate = moment(data.endDate, ['YYYY-MM-DD']).format(
-      'MMMM D YYYY'
-    );
+    const formattedStartDate = moment(data.startDate, ['YYYY-MM-DD']);
+    const formattedEndDate = moment(data.endDate, ['YYYY-MM-DD']);
+
+    const dur = formattedEndDate.diff(formattedStartDate, 'days') + 1;
 
     this.filter = {
       ...data,
-      startDate: formattedStartDate,
-      endDate: formattedEndDate
+      nights: dur
     };
-    console.log(this.filter);
+
+    this.applyFilter.emit(this.filter);
   }
 
-
+  public filterReset() {
+    this.filterForm.reset();
+    this.resetList.emit();
+  }
 }

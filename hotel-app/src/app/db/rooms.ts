@@ -7,8 +7,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 50,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 2,
@@ -16,8 +17,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 50,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 3,
@@ -25,8 +27,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 50,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 4,
@@ -34,8 +37,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 50,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 5,
@@ -43,8 +47,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 100,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 6,
@@ -52,8 +57,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 100,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate:new Date(),
+    nights: 0
   },
   {
     id: 7,
@@ -61,8 +67,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 100,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 8,
@@ -70,8 +77,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 100,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 9,
@@ -79,8 +87,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 150,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 10,
@@ -88,8 +97,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 150,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 11,
@@ -97,8 +107,9 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 150,
     bnB: false,
-    startDate: '',
-    endDate: ''
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
   },
   {
     id: 12,
@@ -106,7 +117,19 @@ export const rooms: RoomDTO[] = [
     isBooked: false,
     price: 150,
     bnB: false,
-    startDate: '',
-    endDate: ''
-  }
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 0
+  },
+  {
+    id: 13,
+    type: 'Studio',
+    isBooked: false,
+    price: 150,
+    bnB: true,
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 5
+  },
+
 ];

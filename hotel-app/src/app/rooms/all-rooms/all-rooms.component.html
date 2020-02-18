@@ -1,6 +1,11 @@
+<p></p>
 <div class="filter-btn">
-  <button mat-raised-button color="primary" [routerLink]="['/filter']">Filter</button>
+  <app-room-filter
+  (applyFilter)="this.applyFilter($event)"
+  (resetList)="this.resetList()"
+  ></app-room-filter>
 </div>
+<p></p>
 <div class="rooms-list">
   <div class="rooms-list">
     <app-room-info
@@ -8,6 +13,7 @@
       [room]="room"
       class="room-info"
       (bookRoom)="this.bookRoom($event)"
+      (addBreakfast)="this.addBreakfast($event)"
     ></app-room-info>
   </div>
 </div>

@@ -1,5 +1,6 @@
 export class RoomFilterDTO {
   type: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
+  nights: number;
 }
