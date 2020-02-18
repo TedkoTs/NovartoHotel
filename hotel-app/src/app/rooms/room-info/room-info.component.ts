@@ -20,8 +20,13 @@ export class RoomInfoComponent {
 
   @Output() public bookRoom: EventEmitter<RoomDTO> = new EventEmitter();
 
+
   public onBookButtonClick(): void {
     this.bookRoom.emit(this.roomToShow);
+  }
+
+  public onBreakfastClick(): void {
+    this.roomToShow.bnB = !this.roomToShow.bnB;
   }
 
 }
