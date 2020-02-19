@@ -1,1 +1,56 @@
-<p>owner works!</p>
+<div class="row">
+  <div class="column">
+    <h5 class="column-title">Booked Rooms</h5>
+    <div *ngFor="let room of this.bookedRooms">
+      <mat-card class="room-card">
+        <mat-card-header>
+          <mat-card-title style="margin-left:-15px;"
+            >{{ this.room.type }} #{{ this.room.id }}</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            Booked On {{ this.room.startDate | date }} untill
+            {{ this.room.endDate | date }}
+          </p>
+          <p>Duration: {{ this.room.nights }} nights.</p>
+          <p>Price per night: {{ this.room.price | currency: "EUR" }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="column">
+    <h5 class="column-title">Free Rooms</h5>
+    <div *ngFor="let room of this.freeRooms">
+      <mat-card class="room-card">
+        <mat-card-header>
+          <mat-card-title style="margin-left:-15px;"
+            >{{ this.room.type }} #{{ this.room.id }}</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <p>Status: Available</p>
+          <p>Price per night: {{ this.room.price | currency: "EUR" }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="column">
+    <h5 class="column-title">Calculator</h5>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title style="margin-left:-15px;">Total Income</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{ this.income | currency: "EUR" }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onClickCalc()">
+          CALCULATE
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

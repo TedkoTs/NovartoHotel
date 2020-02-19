@@ -53,6 +53,7 @@
       </mat-card-content>
       <mat-card-actions align="center">
         <button
+          matTooltip="Apply filter"
           mat-raised-button
           color="primary"
           [disabled]="!filterForm.valid"
@@ -61,9 +62,10 @@
         </button>
         <button
           type="button"
+          matTooltip="Reset the form"
           mat-raised-button
           color="warn"
-          (click) = "filterReset()"
+          (click)="filterReset()"
         >
           Reset
         </button>

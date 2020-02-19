@@ -4,13 +4,17 @@
       <mat-card-title>{{ this.roomToShow.type }}</mat-card-title>
       <mat-card-subtitle>Status: Available</mat-card-subtitle>
       <mat-card-subtitle
-        >Price: {{ this.roomToShow.price }} &euro;</mat-card-subtitle
+        >Price: {{ this.roomToShow.price }} &euro; per day</mat-card-subtitle
+      >
+      <mat-card-subtitle
+        >{{ this.roomToShow.nights }}-day stay</mat-card-subtitle
       >
     </mat-card-header>
     <mat-card-actions fxFlexAlign="end" align="end">
       <section class="breakfast-section">
         <label class="breakfast-label">Add breakfast</label>
         <mat-checkbox
+          matTooltip="Add breakfast"
           [checked]="this.roomToShow.bnB"
           color="warn"
           class="room-item"
@@ -18,15 +22,21 @@
         ></mat-checkbox>
       </section>
       <section class="price-section">
-      <label class="price-label">Total price: {{calculatePrice()}}&euro;</label>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="this.onBookButtonClick()"
-      >
-        Book
-      </button>
-    </section>
+        <label class="price-label"
+          >Total price:
+          {{
+            this.roomToShow.price * this.roomToShow.nights | currency: "EUR"
+          }}</label
+        >
+        <button
+          mat-raised-button
+          matTooltip="Book this room"
+          color="primary"
+          (click)="this.onBookButtonClick()"
+        >
+          Book
+        </button>
+      </section>
     </mat-card-actions>
   </mat-card>
 </div>

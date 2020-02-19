@@ -9,12 +9,23 @@ import { rooms } from '../../db/rooms';
 })
 export class OwnerComponent implements OnInit {
 
-  public bookedRooms: RoomDTO[] = rooms.slice().filter(room => room.isBooked === true);
+  public bookedRooms: RoomDTO[] = rooms.slice().filter(room => room.isBooked);
+  public freeRooms: RoomDTO[] = rooms.slice().filter(room => !room.isBooked);
+  public income: number;
 
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  onClickCalc() {
+    const fullPrice: number[] = [];
+    this.bookedRooms.forEach(el => {
+      fullPrice.push(el.price * el.nights);
+    });
+
+    return this.income = fullPrice.reduce((a, b) => a + b, 0);
   }
 
 }
+// .reduce((a, b) => a + b.price, 0);

@@ -124,12 +124,32 @@ export const rooms: RoomDTO[] = [
   {
     id: 13,
     type: 'Studio',
-    isBooked: false,
+    isBooked: true,
     price: 150,
     bnB: true,
     startDate: new Date(),
     endDate: new Date(),
     nights: 5
+  },
+  {
+    id: 14,
+    type: 'Studio',
+    isBooked: true,
+    price: 150,
+    bnB: true,
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 10
+  },
+  {
+    id: 15,
+    type: 'Studio',
+    isBooked: true,
+    price: 150,
+    bnB: true,
+    startDate: new Date(),
+    endDate: new Date(),
+    nights: 1
   },
 
 ];

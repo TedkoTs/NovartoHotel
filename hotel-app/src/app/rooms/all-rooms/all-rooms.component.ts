@@ -10,7 +10,7 @@ import { rooms } from '../../db/rooms';
 })
 export class AllRoomsComponent implements OnInit {
 
-  public rooms: RoomDTO[] = rooms.slice().filter(room => room.isBooked === false);
+  public rooms: RoomDTO[];
 
   constructor() { }
 
@@ -25,14 +25,18 @@ export class AllRoomsComponent implements OnInit {
   public addBreakfast(room: RoomDTO): void {
     const index: number = this.rooms.findIndex(x => x.id === room.id);
     this.rooms[index].bnB = !this.rooms[index].bnB;
-    console.log(this.rooms[index]);
-
+    if (this.rooms[index].bnB) {
+      this.rooms[index].price = (this.rooms[index].price * this.rooms[index].nights) + 10;
+    } else {
+      this.rooms[index].price = (this.rooms[index].price * this.rooms[index].nights);
+    }
   }
 
   public applyFilter(filterParams: RoomFilterDTO): void {
-    console.log(filterParams);
-
-    this.rooms = this.rooms.slice().filter(room => room.type === filterParams.type);
+    this.rooms = rooms.slice()
+      .filter(room => !room.isBooked)
+      .filter(room => room.type === filterParams.type);
+    this.rooms.forEach(room => room.nights = filterParams.nights);
   }
 
   public resetList() {

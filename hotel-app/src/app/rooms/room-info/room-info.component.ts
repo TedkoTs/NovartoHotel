@@ -11,16 +11,16 @@ export class RoomInfoComponent {
   public roomToShow: RoomDTO;
   public totalPrice: number;
 
-  @Input() public set room(value: RoomDTO) {
-    const formattedStartDate = moment(value.startDate, ['YYYY-MM-DD']).format(
+  @Input() public set room(data: RoomDTO) {
+    const formattedStartDate = moment(data.startDate, ['YYYY-MM-DD']).format(
       'MMMM Do YYYY'
     );
-    const formattedEndDate = moment(value.endDate, ['YYYY-MM-DD']).format(
+    const formattedEndDate = moment(data.endDate, ['YYYY-MM-DD']).format(
       'MMMM Do YYYY'
     );
 
     this.roomToShow = {
-      ...value,
+      ...data,
     };
   }
 
@@ -35,13 +35,4 @@ export class RoomInfoComponent {
   public onBreakfastClick(): void {
     this.addBreakfast.emit(this.roomToShow);
   }
-
-  public calculatePrice(): number {
-    if (!this.roomToShow.bnB) {
-      return this.roomToShow.price * this.roomToShow.nights;
-    } else {
-      return (this.roomToShow.price + 10) * this.roomToShow.nights;
-    }
-  }
-
 }

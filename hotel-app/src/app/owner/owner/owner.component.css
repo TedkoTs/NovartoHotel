@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  margin: 10px;
+}
+
+.column {
+  flex: 33%;
+  margin: 5px;
+}
+
+.room-card {
+  margin: 5px;
+}
+.column-title {
+  margin: 5px;
+}

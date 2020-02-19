@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="all-rooms-container">
+  <h4>This are all the rooms we have</h4>
+  <div class="room-list">
+    <div *ngIf="this.rooms" class="room-list">
+      <mat-card class="room-info" *ngFor="let room of this.rooms">
+        <mat-card-header>
+          <mat-card-title>{{ this.room.type }}</mat-card-title>
+          <mat-card-subtitle
+            >Price: {{ this.room.price | currency: "EUR" }} per
+            day</mat-card-subtitle
+          >
+          <mat-card-subtitle *ngIf="this.room.isBooked" [ngStyle] = "{'color': 'red'}">Status: Unavailable</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="!this.room.isBooked">Status: Available</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+</div>

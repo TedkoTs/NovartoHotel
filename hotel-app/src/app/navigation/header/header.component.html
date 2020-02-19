@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
   <div class="left-button-toolbar">
     <button
+      matTooltip="Home"
       mat-button
       [routerLink]="['']"
       [routerLinkActive]="'nav-link-active'"
@@ -8,18 +9,20 @@
       <mat-icon>home</mat-icon>
     </button>
     <button
-    mat-button
-    [routerLink]="['/rooms']"
-    [routerLinkActive]="'nav-link-active'"
-  >
-    <mat-icon>room</mat-icon>
-  </button>
+      matTooltip="Go to room filter"
+      mat-button
+      [routerLink]="['/rooms']"
+      [routerLinkActive]="'nav-link-active'"
+    >
+      <mat-icon>room</mat-icon>
+    </button>
     <button
-    mat-button
-    [routerLink]="['/owner']"
-    [routerLinkActive]="'nav-link-active'"
-  >
-    <mat-icon>euro_symbol</mat-icon>
-  </button>
+      matTooltip="Owner info"
+      mat-button
+      [routerLink]="['/owner']"
+      [routerLinkActive]="'nav-link-active'"
+    >
+      <mat-icon>euro_symbol</mat-icon>
+    </button>
   </div>
 </mat-toolbar>
