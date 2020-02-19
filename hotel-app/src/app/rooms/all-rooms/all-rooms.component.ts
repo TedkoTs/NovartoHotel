@@ -26,7 +26,7 @@ export class AllRoomsComponent implements OnInit {
     const index: number = this.rooms.findIndex(x => x.id === room.id);
     this.rooms[index].bnB = !this.rooms[index].bnB;
     if (this.rooms[index].bnB) {
-      this.rooms[index].price = (this.rooms[index].price * this.rooms[index].nights) + 10;
+      this.rooms[index].price = (this.rooms[index].price * this.rooms[index].nights) + (10 * this.rooms[index].nights);
     } else {
       this.rooms[index].price = (this.rooms[index].price * this.rooms[index].nights);
     }
@@ -40,7 +40,7 @@ export class AllRoomsComponent implements OnInit {
   }
 
   public resetList() {
-    this.rooms = rooms;
+    this.rooms = [];
   }
 
 }
