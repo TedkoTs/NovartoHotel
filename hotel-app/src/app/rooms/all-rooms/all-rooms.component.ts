@@ -10,37 +10,37 @@ import { rooms } from '../../db/rooms';
 })
 export class AllRoomsComponent implements OnInit {
 
-  public rooms: RoomDTO[];
+  public roomsToShow: RoomDTO[];
 
   constructor() { }
 
   ngOnInit(): void { }
 
   public bookRoom(room: RoomDTO): void {
-    const index: number = this.rooms.findIndex(x => x.id === room.id);
-    this.rooms[index].isBooked = true;
-    this.rooms.splice(index, 1);
+    const index: number = this.roomsToShow.findIndex(x => x.id === room.id);
+    this.roomsToShow[index].isBooked = true;
+    this.roomsToShow.splice(index, 1);
   }
 
   public addBreakfast(room: RoomDTO): void {
-    const index: number = this.rooms.findIndex(x => x.id === room.id);
-    this.rooms[index].bnB = !this.rooms[index].bnB;
-    if (this.rooms[index].bnB) {
-      this.rooms[index].price = (this.rooms[index].price * this.rooms[index].nights) + (10 * this.rooms[index].nights);
-    } else {
-      this.rooms[index].price = (this.rooms[index].price * this.rooms[index].nights);
-    }
+    const index: number = this.roomsToShow.findIndex(x => x.id === room.id);
+    this.roomsToShow[index].bnB = !this.roomsToShow[index].bnB;
   }
 
   public applyFilter(filterParams: RoomFilterDTO): void {
-    this.rooms = rooms.slice()
+    this.roomsToShow = rooms
       .filter(room => !room.isBooked)
       .filter(room => room.type === filterParams.type);
-    this.rooms.forEach(room => room.nights = filterParams.nights);
+    this.roomsToShow.forEach(room => {
+      room.nights = filterParams.nights,
+        room.bnB = false;
+      room.startDate = filterParams.startDate;
+      room.endDate = filterParams.endDate;
+    });
   }
 
   public resetList() {
-    this.rooms = [];
+    this.roomsToShow = [];
   }
 
 }

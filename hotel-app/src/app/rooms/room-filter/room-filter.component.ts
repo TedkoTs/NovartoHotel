@@ -17,9 +17,11 @@ export class RoomFilterComponent implements OnInit {
   public filterForm: FormGroup;
   public roomTypes: string[] = ['Single Room', 'Double Room', 'Studio'];
   public filter: RoomFilterDTO;
+  public unavailableDate: Date = new Date();
 
 
   constructor(private readonly formBuilder: FormBuilder) { }
+
 
   ngOnInit(): void {
     this.filterForm = this.formBuilder.group({
@@ -37,10 +39,12 @@ export class RoomFilterComponent implements OnInit {
 
     this.filter = {
       ...data,
-      nights: dur
+      nights: dur,
+      bnB: false
     };
 
     this.applyFilter.emit(this.filter);
+    this.filterForm.reset();
   }
 
   public filterReset() {

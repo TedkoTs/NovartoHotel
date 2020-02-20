@@ -9,7 +9,7 @@
 <div class="rooms-list">
   <div class="rooms-list">
     <app-room-info
-      *ngFor="let room of this.rooms"
+      *ngFor="let room of this.roomsToShow"
       [room]="room"
       class="room-info"
       (bookRoom)="this.bookRoom($event)"

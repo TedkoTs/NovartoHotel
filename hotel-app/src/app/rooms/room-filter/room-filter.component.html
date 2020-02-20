@@ -21,6 +21,7 @@
         <mat-form-field>
           <input
             matInput
+            [min]="this.unavailableDate"
             [matDatepicker]="picker"
             placeholder="Choose check-in"
             formControlName="startDate"
@@ -37,6 +38,7 @@
         <mat-form-field>
           <input
             matInput
+            [min]="this.unavailableDate"
             [matDatepicker]="picker2"
             placeholder="Choose check-out"
             formControlName="endDate"

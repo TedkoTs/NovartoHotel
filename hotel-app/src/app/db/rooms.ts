@@ -58,7 +58,7 @@ export const rooms: RoomDTO[] = [
     price: 100,
     bnB: false,
     startDate: new Date(),
-    endDate:new Date(),
+    endDate: new Date(),
     nights: 0
   },
   {
@@ -124,32 +124,32 @@ export const rooms: RoomDTO[] = [
   {
     id: 13,
     type: 'Studio',
-    isBooked: true,
+    isBooked: false,
     price: 150,
-    bnB: true,
+    bnB: false,
     startDate: new Date(),
     endDate: new Date(),
-    nights: 5
+    nights: 0
   },
   {
     id: 14,
     type: 'Studio',
-    isBooked: true,
+    isBooked: false,
     price: 150,
-    bnB: true,
+    bnB: false,
     startDate: new Date(),
     endDate: new Date(),
-    nights: 10
+    nights: 0
   },
   {
     id: 15,
     type: 'Studio',
-    isBooked: true,
+    isBooked: false,
     price: 150,
-    bnB: true,
+    bnB: false,
     startDate: new Date(),
     endDate: new Date(),
-    nights: 1
+    nights: 0
   },
 
 ];

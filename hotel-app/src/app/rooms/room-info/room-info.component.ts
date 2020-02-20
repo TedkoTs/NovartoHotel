@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { RoomDTO } from '../../db/room.dto';
 import * as moment from 'moment';
 
@@ -26,7 +26,6 @@ export class RoomInfoComponent {
 
   @Output() public bookRoom: EventEmitter<RoomDTO> = new EventEmitter();
   @Output() public addBreakfast: EventEmitter<RoomDTO> = new EventEmitter();
-
 
   public onBookButtonClick(): void {
     this.bookRoom.emit(this.roomToShow);

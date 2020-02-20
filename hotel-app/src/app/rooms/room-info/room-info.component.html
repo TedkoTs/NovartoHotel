@@ -1,10 +1,13 @@
 <div *ngIf="this.roomToShow" class="room-info-container">
   <mat-card class="room-card">
     <mat-card-header>
-      <mat-card-title>{{ this.roomToShow.type }}</mat-card-title>
+      <mat-card-title
+        >{{ this.roomToShow.type }} #{{ this.roomToShow.id }}</mat-card-title
+      >
       <mat-card-subtitle>Status: Available</mat-card-subtitle>
       <mat-card-subtitle
-        >Price: {{ this.roomToShow.price }} &euro; per day</mat-card-subtitle
+        >Price: {{ this.roomToShow.price | currency: "EUR" }} per
+        day</mat-card-subtitle
       >
       <mat-card-subtitle
         >{{ this.roomToShow.nights }}-day stay</mat-card-subtitle
@@ -22,12 +25,19 @@
         ></mat-checkbox>
       </section>
       <section class="price-section">
-        <label class="price-label"
+        <label class="price-label" *ngIf="!this.roomToShow.bnB; else isBnb"
           >Total price:
           {{
             this.roomToShow.price * this.roomToShow.nights | currency: "EUR"
           }}</label
         >
+        <ng-template #isBnb>
+          Total price:
+          {{
+            this.roomToShow.price * this.roomToShow.nights +
+              this.roomToShow.nights * 10 | currency: "EUR"
+          }}
+        </ng-template>
         <button
           mat-raised-button
           matTooltip="Book this room"

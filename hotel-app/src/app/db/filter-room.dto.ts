@@ -3,4 +3,5 @@ export class RoomFilterDTO {
   startDate: Date;
   endDate: Date;
   nights: number;
+  bnB: boolean;
 }
